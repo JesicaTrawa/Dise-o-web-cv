@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/*decalro variables para elementos que se repiten*/
+:root{
+    --color-pimario: #F1E5D1;
+    --color-secundario:#bd9797;
+    --color-terciario: #a77373;
+    --color-hover: #987070;
+
+    --fuente-montserrat: "Montserrat", sans-serif;
+    --fuente-krona: "Krona One", sans-serif;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: var(--color-pimario);
+    color: var(--color-secundario);
+    box-sizing: border-box; /*responsable para calcular el ancho y alto totales de un elemento*/
+}
+
+.header{
+    padding: 2% 0% 0% 15%;  /*centrar las palabras*/
+}
+
+.header__menu{
+    display: flex;
+    gap: 80px; /*espacio entre medio*/
+
+}
+
+.header__menu__link{
+    font-family: var(--fuente-montserrat);
+    color: var(--color-terciario);
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/*para poscisionar los elementos de la pagina
+flexbox es una herramieta que organiza los elementos de una pagina*/
+.presentacion{  
+    display: flex; /*los pocisiona uno al lado del otro*/
+    align-items: center; /*centra los elementos si hay una imagen los textos toman el medio de la imagen*/
+    padding: 6% 15%;
+    justify-content: space-between; /*espacio entre los elementos*/
+    gap: 82px;
+}
+
+.presentacion__contenido{
+    width: 50%; /*tamaño texto*/
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /*espacio entre titutlo y parrafo*/
+}
+
+.presentacion__contenido__titulo{
+    font-size: 2.5rem; /*tamaño fuente titulo*/
+    font-family: var(--fuente-krona); /*fuente*/
+}
+
+.titulo-principal{
+    color: var(--color-terciario);
+}
+
+.presentacion__contenido__texto{
+    font-size: 1.5rem; /*tamaño parrafo*/
+    font-family: var(--fuente-montserrat); /*fuente*/
+}
+
+.presentacion__enlaces{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column; /*botones alineados verticalmente*/
+    align-items: center; /*botones centrados*/
+    gap: 32px; /*espacio entre botones*/
+}
+
+.presentacion__enlaces__subtitulos{
+    font-family: var(--fuente-krona);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.presentacion__enlaces__link{
+    width: 50%;
+     /*color fondo*/
+    text-align: center; /*centrar letra*/
+    border-radius: 8px; /*bordes redondeados*/
+    font-size: 1.5rem; /*tamaño de la fuente*/
+    font-weight: 600;
+    padding: 21.5px 0; /*tamaño de fondo*/
+    text-decoration: none; /*ninguna decoracion en las letras*/
+    color: var(--color-secundario); /*color de la fuente*/
+    font-family: var(--fuente-montserrat);
+    border: 2px solid var(--color-terciario); /*tamaño borde /tipo borde / color del borde*/
+    display: flex; /*junta los iconos con la palabra*/
+    justify-content: center; /*centra ambos (icono con palabra)*/
+    gap: 10px; /*separa el icono de la palabra*/
+}
+
+.presentacion__enlaces__link:hover{  /*cuando pase el raton por el ink cambia color*/
+    background-color: var(--color-hover);
+}
+
+.presentacion__imagen{
+    width: 50%;
+}
+
+.footer{
+    background-color: var(--color-terciario);
+    padding: 24px; /*tamaño del fondo*/
+    color: var(--color-pimario);
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+    font-family: var(--fuente-montserrat);
+}
+
+/*para que le web se adapte a movil */
+@media (max-width: 1200px){
+    .header{
+        padding: 10%; /*espacio entre titulo y foto*/
+    }
+
+    .header__menu{
+        justify-content: center; /*centraliza home-sobre mi*/
+    }
+
+    .presentacion{
+        flex-direction: column-reverse; /*si esta en menos de 1200 los elementos se pondra uno abajo de otr*/
+        padding: 5%; /*achicar un poco los lados, para no tenr tantoe espacio en blanco*/
+    }
+
+    .presentacion__contenido{
+        width: auto;
+    }
+
+
+}
+
+
